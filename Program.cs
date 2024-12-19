@@ -10,6 +10,15 @@ namespace BasicPractice
     {
         static void Main(string[] args)
         {
+            BasicPrograms.GenerateNumbers(1);
+
+            //BasicPrograms.GenerateNextDay();
+
+            //Console.WriteLine("Enter the diameter of a circle");
+            //double dia = Convert.ToInt64(Console.ReadLine());
+            //BasicPrograms.AreaPeriOfCircle(dia);
+
+            //BasicPrograms.GetAverageRandomNum();
 
             //1   Write a program that calculates the sum of the digits of a given integer.
             //Console.WriteLine("Enter the Num:");
@@ -37,13 +46,13 @@ namespace BasicPractice
 
 
             //5   Write a program that calculates the compound interest for a given principal, rate, and time period.
-            Console.WriteLine("Enter the Principal: ");
-            double principal = double.Parse(Console.ReadLine());
-            Console.WriteLine("Enter the Rate: ");
-            double rate = double.Parse(Console.ReadLine());
-            Console.WriteLine("Enter the Time Period: ");
-            double timePeriod = double.Parse(Console.ReadLine());
-            ClassWork.FindCompoundInterest(principal, rate, timePeriod);
+            //Console.WriteLine("Enter the Principal: ");
+            //double principal = double.Parse(Console.ReadLine());
+            //Console.WriteLine("Enter the Rate: ");
+            //double rate = double.Parse(Console.ReadLine());
+            //Console.WriteLine("Enter the Time Period: ");
+            //double timePeriod = double.Parse(Console.ReadLine());
+            //ClassWork.FindCompoundInterest(principal, rate, timePeriod);
 
 
             //BasicPrograms.PrintNames();
@@ -71,10 +80,8 @@ namespace BasicPractice
             //3 Write a program that checks if two given strings are anagrams of each other.
             //Console.WriteLine("Enter the first string:");
             //string str1 = Console.ReadLine();
-
             //Console.WriteLine("Enter the second string:");
             //string str2 = Console.ReadLine();
-
             //if (ClassWork.CheckAnagrams(str1, str2))
             //    Console.WriteLine("The strings are anagrams.");
             //else
@@ -84,16 +91,13 @@ namespace BasicPractice
             //4 Write a program that finds the longest substring in a given string that does not contain any repeating characters. 
             //Console.Write("Enter a string: ");
             //string input = Console.ReadLine();
-
             //string result = ClassWork.LongestUniqueSubstring(input);
             //Console.WriteLine("Longest unique substring: " + result);
 
             //5 Write a program that reverses the words in a given sentence without changing the order of the words.
             //Console.WriteLine("Enter a sentence:");
             //string sentence = Console.ReadLine();
-
             //string result = ClassWork.ReverseEachWord(sentence);
-
             //Console.WriteLine("The sentence with reversed words is:");
             //Console.WriteLine(result);
 
