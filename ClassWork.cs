@@ -8,6 +8,69 @@ namespace BasicPractice
 {
     internal class ClassWork
     {
+
+        public static void SumOfDigits(int n)
+        {
+            int sum = 0;
+            while (n > 0)
+            {
+                int rem = n % 10;
+                sum += rem;
+                n = n / 10;
+            }
+            Console.WriteLine("The sum is: " + sum);
+        }
+
+        public static void ConvertToBinary(int n)
+        {
+            string bin = "";
+            while (n > 0)
+            {
+                int rem = n % 2;
+                bin = rem+bin;
+                n = n / 2;
+            }
+            Console.WriteLine("The Binary of "+n+" is: "+bin);
+        }
+
+        public static void GeneratePermutations(string prefix, string str)
+        {
+            if(str.Length == 0)
+            {
+                Console.WriteLine(prefix);
+            }
+            else
+            {
+                for (int i = 0; i < str.Length; i++)
+                {
+                    string newPrefix = prefix + str[i];
+                    string newStr = str.Substring(0, i) + str.Substring(i + 1);
+                    GeneratePermutations(newPrefix, newStr);
+                }
+            }
+        }
+
+        public static void RemoveVowels(string str)
+        {
+            string vowels = "";
+            str.ToLower();
+            for(int i = 0; i < str.Length; i++)
+            {
+                if (str[i] != 'a' && str[i] != 'e' && str[i] != 'i' && str[i] != 'o' && str[i] != 'u')
+                {
+                    vowels = vowels + str[i];
+                }
+            }
+
+            Console.WriteLine("After Removing Vowels: " + vowels);
+        }
+
+        public static void FindCompoundInterest(double p, double r, double t)
+        {
+            double amount = p*(Math.Pow((1 + r / 100), t));
+            Console.WriteLine("The CI: " + (amount-p));
+        }
+
         public static bool CheckUnique()
         {
             Console.WriteLine("Enter the string:");
