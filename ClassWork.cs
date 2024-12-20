@@ -9,8 +9,12 @@ namespace BasicPractice
     internal class ClassWork
     {
 
-        public static void SumOfDigits(int n)
+        //1   Write a program that calculates the sum of the digits of a given integer.
+        public static void SumOfDigits()
         {
+            Console.WriteLine("Enter the Num:");
+            int n = Convert.ToInt32(Console.ReadLine());
+
             int sum = 0;
             while (n > 0)
             {
@@ -21,8 +25,12 @@ namespace BasicPractice
             Console.WriteLine("The sum is: " + sum);
         }
 
-        public static void ConvertToBinary(int n)
+        //2   Write a program that converts a given decimal number to its binary equivalent.
+        public static void ConvertToBinary()
         {
+            Console.WriteLine("Enter the Num:");
+            int n = Convert.ToInt32(Console.ReadLine());
+
             string bin = "";
             while (n > 0)
             {
@@ -33,6 +41,7 @@ namespace BasicPractice
             Console.WriteLine("The Binary of "+n+" is: "+bin);
         }
 
+        //3   Write a program that generates all permutations of a given string.
         public static void GeneratePermutations(string prefix, string str)
         {
             if(str.Length == 0)
@@ -50,8 +59,11 @@ namespace BasicPractice
             }
         }
 
-        public static void RemoveVowels(string str)
+        //4   Write a program that removes all vowels from a given string.
+        public static void RemoveVowels()
         {
+            Console.WriteLine("Enter the String:");
+            string str = Console.ReadLine();
             string vowels = "";
             str.ToLower();
             for(int i = 0; i < str.Length; i++)
@@ -65,12 +77,21 @@ namespace BasicPractice
             Console.WriteLine("After Removing Vowels: " + vowels);
         }
 
-        public static void FindCompoundInterest(double p, double r, double t)
+        //5   Write a program that calculates the compound interest for a given principal, rate, and time period.
+        public static void FindCompoundInterest()
         {
+            Console.WriteLine("Enter the Principal: ");
+            double p = double.Parse(Console.ReadLine());
+            Console.WriteLine("Enter the Rate: ");
+            double r = double.Parse(Console.ReadLine());
+            Console.WriteLine("Enter the Time Period: ");
+            double t = double.Parse(Console.ReadLine());
+
             double amount = p*(Math.Pow((1 + r / 100), t));
             Console.WriteLine("The CI: " + (amount-p));
         }
 
+        //1 Write a program that checks if a given string has all unique characters
         public static bool CheckUnique()
         {
             Console.WriteLine("Enter the string:");
@@ -91,6 +112,7 @@ namespace BasicPractice
             return true;
         }
 
+        //2 Write a program that generates and prints all prime numbers up to a given number n. 
         public static void PrintPrime(int n)
         {
             for(int i = 2; i <= n; i++)
@@ -114,8 +136,14 @@ namespace BasicPractice
             return true;
         }
 
-        public static bool CheckAnagrams(string str1, string str2)
+        //3 Write a program that checks if two given strings are anagrams of each other.
+        public static bool CheckAnagrams()
         {
+            Console.WriteLine("Enter the first string:");
+            string str1 = Console.ReadLine();
+            Console.WriteLine("Enter the second string:");
+            string str2 = Console.ReadLine();
+
             if (str1.Length != str2.Length)
             {
                 return false;
@@ -130,8 +158,12 @@ namespace BasicPractice
             return new string(charArray1) == new string(charArray2);
         }
 
-        public static string ReverseEachWord(string sentence)
+        //5 Write a program that reverses the words in a given sentence without changing the order of the words.
+        public static void ReverseEachWord()
         {
+            Console.WriteLine("Enter a sentence:");
+            string sentence = Console.ReadLine();
+
             string[] words = sentence.Split(' ');
             string reversedSentence = "";
 
@@ -147,11 +179,17 @@ namespace BasicPractice
                 reversedSentence += reversedWord + " ";
             }
             
-            return reversedSentence.Trim();
+            reversedSentence.Trim();
+            Console.WriteLine("The sentence with reversed words is:");
+            Console.WriteLine(reversedSentence);
         }
 
-        public static string LongestUniqueSubstring(string input)
+        //4 Write a program that finds the longest substring in a given string that does not contain any repeating characters. 
+        public static void LongestUniqueSubstring()
         {
+            Console.Write("Enter a string: ");
+            string input = Console.ReadLine();
+
             string longest = string.Empty;
             string current = string.Empty;
 
@@ -176,7 +214,7 @@ namespace BasicPractice
                 longest = current;
             }
 
-            return longest;
+            Console.WriteLine("Longest unique substring: " + longest);
         }
 
     }

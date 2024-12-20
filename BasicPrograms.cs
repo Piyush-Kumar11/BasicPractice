@@ -73,8 +73,10 @@ namespace BasicPractice
             Console.WriteLine("\n\nAverage: " + (sum/arr.Length));
         }
 
-        public static void AreaPeriOfCircle(double dia)
+        public static void AreaPeriOfCircle()
         {
+            Console.WriteLine("Enter the diameter of a circle");
+            double dia = Convert.ToInt64(Console.ReadLine());
             double radius = dia / 2;
 
             Console.WriteLine("Area is: " + (radius * 3.14 * radius)+" sq. unit");
