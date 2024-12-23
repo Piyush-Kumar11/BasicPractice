@@ -10,8 +10,12 @@ namespace BasicPractice
     {
         static void Main(string[] args)
         {
+            int[] ar = ArrayBased.CreateArray();
+            ArrayBased.FindFirstRepeatedElement(ar);
+
             //StringBased.CheckString();
 
+            //NumberBased.ShiftZerosToEnd();
             //NumberBased.AvgOfNumber();
             //NumberBased.FindRootsOfQuadratic();
             //NumberBased.ConvertNumToString();

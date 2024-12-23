@@ -12,6 +12,33 @@ namespace BasicPractice
 {
     internal class NumberBased
     {
+
+        //Write a Program to find the first repeated element in the array(read elements of the array from the user and then find the first repeated element in a one-dimensional array)
+
+
+        //Write a Program to shift all zero to the end of array.
+        public static void ShiftZerosToEnd()
+        {
+            int[] ar = { 23,4,0,2,0,89};
+            int[] ar2 = new int[ar.Length];
+
+            int j = 0;
+            for(int i = 0; i < ar.Length; i++)
+            {
+                if (ar[i] != 0)
+                {
+                    ar2[j] = ar[i];
+                    j++;
+                }
+            }
+
+            foreach(int i in ar2)
+            {
+                Console.Write(i + " ");
+            }
+
+        }
+
         //Write a program that takes an array of floats and returns the average of these numbers
         public static void AvgOfNumber()
         {
