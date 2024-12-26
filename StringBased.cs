@@ -45,5 +45,22 @@ namespace BasicPractice
             else
                 Console.WriteLine("None");
         }
+
+        public static void PrintPlaceName()
+        {
+            Console.WriteLine("Enter the place:");
+            string place = Console.ReadLine();
+            Console.WriteLine(place.ToUpper());
+            Console.WriteLine(place.ToLower());
+        }
+        public static void PrintNames()
+        {
+            Console.WriteLine("Harry");
+            Console.WriteLine("Jack");
+            Console.WriteLine("Piyush");
+            Console.WriteLine("Anmol");
+            Console.WriteLine("Kellen");
+
+        }
     }
 }

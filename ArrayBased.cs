@@ -8,6 +8,29 @@ namespace BasicPractice
 {
     internal class ArrayBased
     {
+        public static void Exceptions()
+        {
+            int[] arr = { 2, 4, 8, 9 };
+
+            Console.WriteLine(arr[0]);
+            Console.WriteLine(arr[1]);
+            Console.WriteLine(arr[2]);
+            Console.WriteLine(arr[3]);
+
+            try
+            {
+                Console.WriteLine(arr[4]);
+            }
+            catch(IndexOutOfRangeException e)
+            {
+                Console.WriteLine(e.Message);
+            }
+            finally
+            {
+                Console.WriteLine("Exception Handled");
+            }
+            
+        }
         public static int[] CreateArray()
         {
             Console.WriteLine("Enter the size of an Array:");
@@ -44,6 +67,41 @@ namespace BasicPractice
                     }
                 }
             }
+        }
+
+        //Write a Program to shift all zero to the end of array.
+        public static void ShiftZerosToEnd()
+        {
+            int[] ar = { 23, 4, 0, 2, 0, 89 };
+            int[] ar2 = new int[ar.Length];
+
+            int j = 0;
+            for (int i = 0; i < ar.Length; i++)
+            {
+                if (ar[i] != 0)
+                {
+                    ar2[j] = ar[i];
+                    j++;
+                }
+            }
+
+            foreach (int i in ar2)
+            {
+                Console.Write(i + " ");
+            }
+
+        }
+
+        //Write a program that takes an array of floats and returns the average of these numbers
+        public static void AvgOfNumber()
+        {
+            float sum = 0.0f;
+            float[] num = { 2.5f, 5.8f, 88.4f, 52f };
+            foreach (float f in num)
+            {
+                sum += f;
+            }
+            Console.WriteLine("Avg is: " + (sum / num.Length));
         }
     }
 }

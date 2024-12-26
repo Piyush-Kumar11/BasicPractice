@@ -10,17 +10,27 @@ namespace BasicPractice
     {
         static void Main(string[] args)
         {
+
+
             int[] ar = ArrayBased.CreateArray();
             ArrayBased.FindFirstRepeatedElement(ar);
+            //ArrayBased.ShiftZerosToEnd();
+            //ArrayBased.AvgOfNumber();
+            //ArrayBased.Exceptions();
 
             //StringBased.CheckString();
+            //StringBased.PrintPlaceName();
+            //StringBased.PrintNames();
 
-            //NumberBased.ShiftZerosToEnd();
-            //NumberBased.AvgOfNumber();
+            //NumberBased.Exceptions();
             //NumberBased.FindRootsOfQuadratic();
             //NumberBased.ConvertNumToString();
             //NumberBased.FindFactorial();
             //NumberBased.CheckNumDivisiblity();
+            //NumberBased.GenerateNumbers(1);
+            //NumberBased.PrintNum10Times();
+            //NumberBased.SquareAndSum();
+            //NumberBased.SquareAndDiff();
 
             //FindExecutionTime.ExecutionTime();
 
@@ -37,15 +47,9 @@ namespace BasicPractice
             //ClassWork.LongestUniqueSubstring(); 
             //ClassWork.ReverseEachWord();
 
-            //BasicPrograms.GenerateNumbers(1);
             //BasicPrograms.GenerateNextDay();
             //BasicPrograms.AreaPeriOfCircle();
             //BasicPrograms.GetAverageRandomNum();
-            //BasicPrograms.PrintNames();
-            //BasicPrograms.SquareAndSum();
-            //BasicPrograms.SquareAndDiff();
-            //BasicPrograms.PrintPlaceName();
-            //BasicPrograms.PrintNum10Times();
 
 
             //if (ClassWork.CheckUnique())

@@ -12,43 +12,22 @@ namespace BasicPractice
 {
     internal class NumberBased
     {
-
-        //Write a Program to find the first repeated element in the array(read elements of the array from the user and then find the first repeated element in a one-dimensional array)
-
-
-        //Write a Program to shift all zero to the end of array.
-        public static void ShiftZerosToEnd()
+        public static void Exceptions()
         {
-            int[] ar = { 23,4,0,2,0,89};
-            int[] ar2 = new int[ar.Length];
-
-            int j = 0;
-            for(int i = 0; i < ar.Length; i++)
+            int n = 2;
+            int n2 = 0;
+            try
             {
-                if (ar[i] != 0)
-                {
-                    ar2[j] = ar[i];
-                    j++;
-                }
+                Console.WriteLine(2 / n2);
             }
-
-            foreach(int i in ar2)
+            catch(DivideByZeroException e)
             {
-                Console.Write(i + " ");
+                Console.WriteLine(e.Message);
             }
-
-        }
-
-        //Write a program that takes an array of floats and returns the average of these numbers
-        public static void AvgOfNumber()
-        {
-            float sum =0.0f;
-            float[] num = { 2.5f, 5.8f, 88.4f, 52f };
-            foreach (float f in num) 
+            finally
             {
-                sum += f;
+                Console.WriteLine("Exception Handled!!!");
             }
-            Console.WriteLine("Avg is: " + (sum / num.Length));
         }
 
         //Write a Program to to Find Roots of a Quadratic Equation. (using If Else statement or switch The roots of a Quadratic Equation(ax2+bx+c) depends upon the discriminant value.)
@@ -154,5 +133,54 @@ namespace BasicPractice
             }
         }
 
+        public static void GenerateNumbers(int n)
+        {
+            if (n <= 100)
+            {
+                Console.Write(n + " ");
+                n++;
+            }
+            else
+            {
+                return;
+            }
+            GenerateNumbers(n);
+        }
+
+        public static void PrintNum10Times()
+        {
+            Console.WriteLine("Enter the Num:");
+            string num = Console.ReadLine();
+            for (int i = 0; i < 10; i++)
+            {
+                Console.WriteLine(num);
+            }
+        }
+
+        public static void SquareAndSum()
+        {
+            try
+            {
+                Console.WriteLine("Enter firstNum:");
+                decimal n1 = Convert.ToDecimal(Console.ReadLine());
+                Console.WriteLine("Enter 2ndNum:");
+                decimal n2 = Convert.ToDecimal(Console.ReadLine());
+                Console.WriteLine("Square and Sum of num: " + ((n1 * n1) + (n2 * n2)));
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("Enter decimal or integer type value only!");
+            }
+
+        }
+
+        public static void SquareAndDiff()
+        {
+            Console.WriteLine("Enter firstNum:");
+            double n1 = Convert.ToDouble(Console.ReadLine());
+            Console.WriteLine("Enter 2ndNum:");
+            double n2 = Convert.ToDouble(Console.ReadLine());
+            Console.WriteLine("Square and Difference of num: " + ((n1 * n1) - (n2 * n2)));
+        }
     }
 }
