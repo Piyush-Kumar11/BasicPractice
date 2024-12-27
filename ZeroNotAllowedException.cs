@@ -10,6 +10,7 @@ namespace BasicPractice
     {
         public ZeroNotAllowedException(string msg): base(msg) { }
 
+        //can override ToString to provide a simpler or more application-specific message.
         //public override string ToString()
         //{
         //    //Message Property is from Exception base class
