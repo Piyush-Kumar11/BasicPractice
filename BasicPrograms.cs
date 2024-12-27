@@ -8,6 +8,27 @@ namespace BasicPractice
 {
     internal class BasicPrograms
     {
+        //Implementing Local Custom Exception
+        public static void Calculate(double n)
+        {
+            try
+            {
+                if (n <= 0)
+                {
+                    //This msg will go through the construuctor
+                    throw new ZeroNotAllowedException("Number less than Zero or Zero not allowed!");
+                }
+
+                double res = Math.Sqrt(n);
+                Console.WriteLine($"Square Root of {n} is {res}");
+            }
+            catch(ZeroNotAllowedException e)
+            {
+                Console.WriteLine(e.Message); //Msg passed from the child constructor to the parent class constructor will get printed
+                Console.WriteLine(e); //Calls the ToString method from custom exception class
+            }
+            
+        }
         public static void GetAverageRandomNum()
         {
             Random r = new Random();
