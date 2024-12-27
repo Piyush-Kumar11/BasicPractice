@@ -8,6 +8,61 @@ namespace BasicPractice
 {
     internal class ArrayBased
     {
+        public static void SmallestGap()
+        {
+            int[] arr = CreateArray();
+            int gap = int.MaxValue;
+
+            if (arr.Length < 2)
+            {
+                Console.WriteLine("Array must have at least two elements.");
+                return;
+            }
+
+            for(int i = 0; i < arr.Length-1; i++)
+            {
+                int currentGap = Math.Abs(arr[i] - arr[i + 1]);
+                if (currentGap < gap)
+                {
+                    gap = currentGap;
+                }
+            }
+            Console.WriteLine("The smallest Gap between elements is : " + gap);
+        }
+
+        public static void RemoveDuplicates()
+        {
+            //Object[] arr = {"Hey",2.5,'C',"Java","Hey",'D','c',55,2 };
+            int[] arr = CreateArray();
+
+            Console.WriteLine("\nAfter removing duplicates: ");
+            var newArr = arr.Distinct();
+            foreach ( var item in newArr )
+            {
+                Console.Write( item+" " );
+            }
+        }
+
+        public static void SecondLargest()
+        {
+            int[] arr = CreateArray();
+
+            int h1 = int.MinValue;
+            int h2 = arr[0];
+
+            for(int i = 0; i < arr.Length; i++)
+            {
+                if (arr[i] > h1)
+                {
+                    h1 = arr[i];
+                }else if (arr[i] > h2 && arr[i]<h1)
+                {
+                    h2 = arr[i];
+                }
+            }
+            Console.WriteLine("2nd Highest is: " + h2);
+        }
+
         public static void Exceptions()
         {
             int[] arr = { 2, 4, 8, 9 };
@@ -31,6 +86,7 @@ namespace BasicPractice
             }
             
         }
+
         public static int[] CreateArray()
         {
             Console.WriteLine("Enter the size of an Array:");
@@ -51,8 +107,10 @@ namespace BasicPractice
             Console.WriteLine();
             return arr;
         }
-        public static void FindFirstRepeatedElement(int[] arr)
+
+        public static void FindFirstRepeatedElement()
         {
+            int[] arr = CreateArray();
             int index = 0;
 
             for(int i = 0;i < arr.Length;i++)

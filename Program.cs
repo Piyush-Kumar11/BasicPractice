@@ -10,10 +10,10 @@ namespace BasicPractice
     {
         static void Main(string[] args)
         {
-
-
-            //int[] ar = ArrayBased.CreateArray();
-            //ArrayBased.FindFirstRepeatedElement(ar);
+            ArrayBased.SmallestGap();
+            //ArrayBased.RemoveDuplicates();
+            //ArrayBased.SecondLargest();
+            //ArrayBased.FindFirstRepeatedElement();
             //ArrayBased.ShiftZerosToEnd();
             //ArrayBased.AvgOfNumber();
             //ArrayBased.Exceptions();
@@ -47,7 +47,7 @@ namespace BasicPractice
             //ClassWork.LongestUniqueSubstring(); 
             //ClassWork.ReverseEachWord();
 
-            BasicPrograms.Calculate(0);
+            //BasicPrograms.Calculate(0);
             //BasicPrograms.GenerateNextDay();
             //BasicPrograms.AreaPeriOfCircle();
             //BasicPrograms.GetAverageRandomNum();
