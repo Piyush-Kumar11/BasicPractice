@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -8,6 +9,143 @@ namespace BasicPractice
 {
     internal class ClassWork
     {
+        //1. Write a program that merges two sorted arrays into a single sorted array.
+        public static void MergeArray()
+        {
+            int[] arr = CreateArray();
+            Console.WriteLine("===================");
+            int[] ar2 = CreateArray();
+
+            int n1 = arr.Length;
+            int n2 = ar2.Length;
+
+            int[] result = new int[n1 + n2];
+            int i = 0;
+            int j = 0;
+            int k = 0;
+
+            while (i < n1 && j < n2)
+            {
+                if (arr[i] <= ar2[j])
+                {
+                    result[k++] = arr[i++];
+                }
+                else
+                {
+                    result[k++] = ar2[j++];
+                }
+            }
+
+            while (i < n1)
+            {
+                result[k++] = arr[i++];
+            }
+
+            while (j < n2)
+            {
+                result[k++] = ar2[j++];
+            }
+
+            Console.WriteLine("Merged Sorted Array:");
+            foreach (int val in result)
+            {
+                Console.Write(val+" ");
+            }
+            Console.WriteLine("\n==============");
+        }
+
+        //2. Write a program that finds the second largest element in an array of integers.
+        public static void SecondLargest()
+        {
+            int[] result = CreateArray();
+
+            int h1 = int.MinValue;
+            int h2 = int.MinValue;
+
+            for (int i = 0; i < result.Length; i++)
+            {
+                if (result[i] > h1)
+                {
+                    h2 = h1;
+                    h1 = result[i];
+                }
+                else if (result[i] > h2 && result[i] != h1)
+                {
+                    h2 = result[i];
+                }
+            }
+            Console.WriteLine("Second Highest is: " + h2);
+        }
+
+        //3. Write a program that removes duplicate elements from an array and prints the result
+        public static void RemoveDuplicates()
+        {
+            int[] arr = CreateArray();
+
+            Console.WriteLine("\nAfter removing duplicates: ");
+            var result = arr.Distinct();
+            foreach (var item in result)
+            {
+                Console.Write(item + " ");
+            }
+        }
+
+        //4. Write a program that finds the missing number in an array of integers from 1 to n.
+        public static void FindMissingNumber()
+        {
+            int[] arr = CreateArray(); 
+            int n = arr.Length + 1; 
+
+            int expectedSum = n * (n + 1) / 2;
+
+            int actualSum = arr.Sum();
+
+            int missingNumber = expectedSum - actualSum;
+
+            Console.WriteLine("The missing number is: " + missingNumber);
+        }
+
+        //5. Write a program that finds the common elements between two arrays.
+        public static void FindCommonElements()
+        {
+            int[] arr1 = CreateArray();
+            Console.WriteLine("===================");
+            int[] arr2 = CreateArray();
+
+            Console.WriteLine("Common elements:");
+            for (int i = 0; i < arr1.Length; i++)
+            {
+                for (int j = 0; j < arr2.Length; j++)
+                {
+                    if (arr1[i] == arr2[j])
+                    {
+                        Console.WriteLine(arr1[i]);
+                        break;
+                    }
+                }
+            }
+        }
+
+        public static int[] CreateArray()
+        {
+            Console.WriteLine("Enter the size of an Array:");
+            int size = Convert.ToInt32(Console.ReadLine());
+            int[] arr = new int[size];
+
+            for (int i = 0; i < arr.Length; i++)
+            {
+                Console.Write("Enter element for " + (i + 1) + " position: ");
+                arr[i] = Convert.ToInt32(Console.ReadLine());
+            }
+
+            Console.WriteLine("\nThe Elements are: ");
+            foreach (int i in arr)
+            {
+                Console.Write(i + " ");
+            }
+            Console.WriteLine();
+            return arr;
+        }
 
         //1   Write a program that calculates the sum of the digits of a given integer.
         public static void SumOfDigits()

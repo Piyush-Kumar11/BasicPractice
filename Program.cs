@@ -10,13 +10,11 @@ namespace BasicPractice
     {
         static void Main(string[] args)
         {
-            ArrayBased.SmallestGap();
-            //ArrayBased.RemoveDuplicates();
-            //ArrayBased.SecondLargest();
-            //ArrayBased.FindFirstRepeatedElement();
-            //ArrayBased.ShiftZerosToEnd();
-            //ArrayBased.AvgOfNumber();
-            //ArrayBased.Exceptions();
+            //ClassWork.MergeArray();
+            //ClassWork.SecondLargest();
+            //ClassWork.RemoveDuplicates();
+            //ClassWork.FindMissingNumber();
+            //ClassWork.FindCommonElements();
 
             //StringBased.CheckString();
             //StringBased.PrintPlaceName();
@@ -31,6 +29,14 @@ namespace BasicPractice
             //NumberBased.PrintNum10Times();
             //NumberBased.SquareAndSum();
             //NumberBased.SquareAndDiff();
+
+            //ArrayBased.SmallestGap();
+            //ArrayBased.RemoveDuplicates();
+            //ArrayBased.SecondLargest();
+            //ArrayBased.FindFirstRepeatedElement();
+            //ArrayBased.ShiftZerosToEnd();
+            //ArrayBased.AvgOfNumber();
+            //ArrayBased.Exceptions();
 
             //FindExecutionTime.ExecutionTime();
 
