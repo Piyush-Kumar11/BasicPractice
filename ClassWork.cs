@@ -24,6 +24,7 @@ namespace BasicPractice
             int j = 0;
             int k = 0;
 
+            //Compare both arrays element to store the smallest
             while (i < n1 && j < n2)
             {
                 if (arr[i] <= ar2[j])
@@ -36,6 +37,7 @@ namespace BasicPractice
                 }
             }
 
+            //To store the remaining elements from the array
             while (i < n1)
             {
                 result[k++] = arr[i++];
@@ -66,11 +68,13 @@ namespace BasicPractice
             {
                 if (result[i] > h1)
                 {
+                    //Found the 1st highest
                     h2 = h1;
                     h1 = result[i];
                 }
                 else if (result[i] > h2 && result[i] != h1)
                 {
+                    //2nd highest will be found by comparing to 1st highest with other elements
                     h2 = result[i];
                 }
             }
@@ -83,6 +87,7 @@ namespace BasicPractice
             int[] arr = CreateArray();
 
             Console.WriteLine("\nAfter removing duplicates: ");
+            //Distinct()-'LINQ' will remove all the duplicates from the given collection of data
             var result = arr.Distinct();
             foreach (var item in result)
             {
@@ -96,10 +101,13 @@ namespace BasicPractice
             int[] arr = CreateArray(); 
             int n = arr.Length + 1; 
 
+            //Calculate the sum of element starting from 1 to n+1 
             int expectedSum = n * (n + 1) / 2;
 
+            //actual sum of the entered element
             int actualSum = arr.Sum();
 
+            //By subtracting the sum it will get the missing number
             int missingNumber = expectedSum - actualSum;
 
             Console.WriteLine("The missing number is: " + missingNumber);
@@ -119,6 +127,7 @@ namespace BasicPractice
                 {
                     if (arr1[i] == arr2[j])
                     {
+                        //If duplicates will be found then printed and break the loop
                         Console.WriteLine(arr1[i]);
                         break;
                     }
@@ -156,8 +165,11 @@ namespace BasicPractice
             int sum = 0;
             while (n > 0)
             {
+                //stores the remainder
                 int rem = n % 10;
+                //sum with the remainder (last digit)
                 sum += rem;
+                //remove the last digit after summation
                 n = n / 10;
             }
             Console.WriteLine("The sum is: " + sum);
@@ -169,11 +181,16 @@ namespace BasicPractice
             Console.WriteLine("Enter the Num:");
             int n = Convert.ToInt32(Console.ReadLine());
 
+            //empty string to store the binary
             string bin = "";
+            //loop will continue till the number becomes zero
             while (n > 0)
             {
+                //remainder will be stored by dividing to 2
                 int rem = n % 2;
+                //concats with the empty string
                 bin = rem+bin;
+                //Decrease the actual number 
                 n = n / 2;
             }
             Console.WriteLine("The Binary of "+n+" is: "+bin);
@@ -182,16 +199,23 @@ namespace BasicPractice
         //3   Write a program that generates all permutations of a given string.
         public static void GeneratePermutations(string prefix, string str)
         {
-            if(str.Length == 0)
+            // Base case: If the string is empty, print the current prefix (which is a permutation)
+            if (str.Length == 0)
             {
                 Console.WriteLine(prefix);
             }
             else
             {
+                // Iterate through each character in the string
                 for (int i = 0; i < str.Length; i++)
                 {
+                    // Create a new prefix by adding the current character 
                     string newPrefix = prefix + str[i];
+
+                    // Create a new string by removing the current character 
                     string newStr = str.Substring(0, i) + str.Substring(i + 1);
+
+                    // Recursively generate permutations for the new prefix and string
                     GeneratePermutations(newPrefix, newStr);
                 }
             }
@@ -202,12 +226,16 @@ namespace BasicPractice
         {
             Console.WriteLine("Enter the String:");
             string str = Console.ReadLine();
+            //Taking empty string to store string after removing vowels
             string vowels = "";
+            //Converts to lower case
             str.ToLower();
             for(int i = 0; i < str.Length; i++)
             {
+                //iterate through each character
                 if (str[i] != 'a' && str[i] != 'e' && str[i] != 'i' && str[i] != 'o' && str[i] != 'u')
                 {
+                    //concat only if it is not a vowel
                     vowels = vowels + str[i];
                 }
             }
@@ -242,11 +270,13 @@ namespace BasicPractice
                 {
                     if (str1[i] == str1[j])
                     {
+                        //if anywhere the character found to be same it will return false
                         return false;
                     }
                 }
               
             }
+            //if the loop is completed and it comes out then it will return true as it didn't find any matching characters
             return true;
         }
 
@@ -264,10 +294,12 @@ namespace BasicPractice
         }
         public static bool PrimeCheck(int n)
         {
+            //Loop till the square root of a number to check the divisibilty 
             for(int i = 2; i <= Math.Sqrt(n); i++)
             {
                 if(n%i == 0)
                 {
+                    //if divides then it will not be a prime
                     return false;
                 }
             }
@@ -284,6 +316,7 @@ namespace BasicPractice
 
             if (str1.Length != str2.Length)
             {
+                //if both the strings are of different length then not an anagram 
                 return false;
             }
 
@@ -293,6 +326,7 @@ namespace BasicPractice
             Array.Sort(charArray1);
             Array.Sort(charArray2);
 
+            // if strings after sorting and converting to char [] equals then it is anagram
             return new string(charArray1) == new string(charArray2);
         }
 
@@ -302,21 +336,26 @@ namespace BasicPractice
             Console.WriteLine("Enter a sentence:");
             string sentence = Console.ReadLine();
 
+            //split the sentence with spaces
             string[] words = sentence.Split(' ');
+            //empty string to store the reversed sentence
             string reversedSentence = "";
 
             foreach (string word in words)
             {
+                //iterate on array after split
                 string reversedWord = "";
 
                 for (int i = word.Length - 1; i >= 0; i--)
                 {
+                    //concat the words after reversing 
                     reversedWord += word[i];
                 }
-                
+                //each words after reversing concats to the final sentence
                 reversedSentence += reversedWord + " ";
             }
             
+            //trim the final sentence if there are an empty spaces
             reversedSentence.Trim();
             Console.WriteLine("The sentence with reversed words is:");
             Console.WriteLine(reversedSentence);
@@ -328,25 +367,34 @@ namespace BasicPractice
             Console.Write("Enter a string: ");
             string input = Console.ReadLine();
 
-            string longest = string.Empty;
-            string current = string.Empty;
+            // Initialize variables to store the longest and current substrings
+            string longest = "";
+            string current = "";
 
+            // Iterate through each character in the input string
             foreach (char c in input)
             {
+                // If the current character is already present in the current substring
                 if (current.Contains(c))
                 {
+                    // Check if the current substring is longer than the longest substring found so far
                     if (current.Length > longest.Length)
                     {
                         longest = current;
                     }
 
+                    // Find the index of the duplicate character in the current substring
                     int index = current.IndexOf(c);
+
+                    // Remove the characters up to and including the duplicate character
                     current = current.Substring(index + 1);
                 }
 
+                // Append the current character to the current substring
                 current += c;
             }
 
+            // Check if the final current substring is longer than the longest substring
             if (current.Length > longest.Length)
             {
                 longest = current;
